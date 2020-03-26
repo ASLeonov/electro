@@ -3,26 +3,30 @@ import Link from 'next/link'
 const topMenuStyle = {
     boxSizing: 'border-box',
     padding: 20,
+    paddingTop: 0,
+    paddingBottom: 14,
     width: '100%',
-    height: 100,
+    height: 80,
     border: 'none',
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
+    fontSize: '150%',
+    borderBottom: '1px solid #DDD'
   }
 
 export default function TopMenu() {
     return (
       <div style={topMenuStyle}>
         <Link href="/">
-            <a>Home</a>
+            <a style={{textDecoration: 'none'}}>Home</a>
         </Link>
         <Link href="/about">
-            <a>About</a>
+            <a style={{textDecoration: 'none'}}>About</a>
         </Link>
-          <p>News</p>
-          <p>Conditions</p>
-          <p>Contacts</p>
+        <Link href="/photos">
+            <a style={{textDecoration: 'none'}}>Photos</a>
+        </Link>
       </div>
     )
   }

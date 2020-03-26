@@ -1,9 +1,17 @@
-export const productMenu = {
-    'Электроустановочные изделия': {
-        'Розетки и выключатели': 'Розетки и выключатели',
-        'Звонки и домофоны': 'Звонки и домофоны',
-        'Удлинители и разветвители': 'Удлинители и разветвители',
-        'Кабельные вилки и розетки': 'Кабельные вилки и розетки',
-        'Антенные системы и спутниковые технологии': 'Антенные системы и спутниковые технологии',
-    }
+export const photoMenu = {
+    'Towns': {
+        'Moscow': 'moscow.jpg',
+        'New York': 'newyork.jpg',
+        'San Paolo': 'sanpaolo.jpg',
+    },
+    'Mountains': {
+        'mountain 1': 'mount1.jpg',
+        'mountain 2': 'mount2.jpg',
+        'mountain 3': 'mount3.jpg',
+    },
+    'Animals': {
+        'animal 1': 'anim1.jpg',
+        'animal 2': 'anim2.jpg',
+        'animal 3': 'anim3.jpg',
+    },
 }

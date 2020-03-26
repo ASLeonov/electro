@@ -1,16 +1,18 @@
-import Layout from '../components/layout'
+import Layout from '../layouts/layout_all'
 
 
-function Index() {
+function About() {
   return (
       <Layout>
-        <div>
-            <h1>About page</h1>
-            <img src='../photo_about.jpg' style={{width:'100%'}}/>
+        <div style={{width:'100%'}}>
+            <h1 style={{marginTop:10}}>About page</h1>
+            <div style={{width:'100%', textAlign:'center'}}>
+              <img src='../about.jpg' style={{width:'auto'}}/>
+            </div>
         </div>
       </Layout>
 
   )
 }
 
-export default Index
+export default About
