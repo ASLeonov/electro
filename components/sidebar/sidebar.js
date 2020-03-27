@@ -17,14 +17,14 @@ export default function Sidebar() {
         const level_2_items = photoMenu[key1]
             for (const key2 in level_2_items) {
                 menu_2.push(
-                    <div style={{paddingLeft:10, paddingBottom:4}}>
-                        {key2} 
+                    <div key={key2} style={{paddingLeft:10, paddingBottom:4}}>
+                        {key2}
                          {/* -> {level_2_items[key2]} */}
                     </div>
                 )
             }
         menu.push(
-            <div>
+            <div key={level_1}>
                 <div style={{paddingBottom:8}}>
                     {level_1}
                 </div>
