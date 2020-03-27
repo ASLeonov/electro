@@ -1,3 +1,4 @@
+import Link from 'next/link'
 
 const headerStyle = {
   boxSizing: 'border-box',
@@ -29,7 +30,9 @@ export default function Header() {
   return (
     <div style={headerStyle}>
       <div style={headerLogoStyle}>
-        <img style={{width:300}} src='../logo.png'/>
+        <Link href='/'>
+          <img style={{width:300}} src='../logo.png'/>
+        </Link>
       </div>
       <div style={headerRightStyle}>
         Simple example of React app with ssr
