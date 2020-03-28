@@ -19,14 +19,16 @@ const getCatalogNames = value => {
   return names
 }
 
-function Photos(props) {
+function Photos() {
 
   const router = useRouter()
   const names = getCatalogNames(router.query.id)
 
   const h2 = router.query.id ? `${names.catalogName} / ${names.itemName}` : ''
 
-  const img_path = router.query.id ? `../${names.catalogName.toLowerCase()}/${router.query.id}.jpg` : null
+  const img_path = router.query.id ? `../${names.catalogName.toLowerCase()}/${router.query.id}.jpg` : ''
+
+  // console.log('render [id]', props)
 
   return (
       <Layout>
@@ -40,6 +42,10 @@ function Photos(props) {
       </Layout>
 
   )
+}
+
+Photos.getInitialProps = async function() {
+  return {}
 }
 
 export default Photos
