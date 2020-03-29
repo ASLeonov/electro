@@ -1,0 +1,32 @@
+.imgSizeStyle {
+    box-sizing: border-box;
+    width: 90px;
+    min-width: 90px;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.increment_decrement {
+    width: 65px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.4s;
+}
+
+.increment_decrement:hover {
+    opacity: 0.9;
+}
+
+.incrementDisabled {
+    opacity: 0.2;
+}
+
+.imgClass {
+    transition: all 0.4s;
+}

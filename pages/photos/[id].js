@@ -1,10 +1,7 @@
 import Layout         from '../../layouts/layout_photo'
 import { useRouter }  from 'next/router'
 import { photoMenu }  from '../../public/fixtures'
-
-const contentStyle = {
-  paddingLeft: 60
-}
+import ImgBlock       from '../../components/img-block/img-block'
 
 const getCatalogNames = value => {
   const names = {}
@@ -25,27 +22,19 @@ function Photos() {
   const names = getCatalogNames(router.query.id)
 
   const h2 = router.query.id ? `${names.catalogName} / ${names.itemName}` : ''
-
   const img_path = router.query.id ? `../${names.catalogName.toLowerCase()}/${router.query.id}.jpg` : ''
-
-  // console.log('render [id]', props)
 
   return (
       <Layout>
-        <div style={contentStyle}>
-            <h1 style={{marginTop:10}}>Photo bank</h1>
-            <h2>{h2}</h2>
-            <div style={{textAlign:'center', paddingTop:10}}>
-              <img src={img_path} style={{width:'60%'}}/>
-            </div>
+        <div style={{paddingLeft:60, width:'100%'}}>
+          <h1 style={{marginTop:10}}>Photo bank</h1>
+          <h2>{h2}</h2>
+          <ImgBlock imgPath={img_path} />
         </div>
       </Layout>
-
   )
 }
 
-Photos.getInitialProps = async function() {
-  return {}
-}
+Photos.getInitialProps = async function() { return {} }
 
 export default Photos

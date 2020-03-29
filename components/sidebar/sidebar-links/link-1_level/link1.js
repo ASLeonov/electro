@@ -5,7 +5,7 @@ export default function Link_1(props) {
 
     const [active, setActive] = useState(false)
 
-    const activeStyle = active ? { paddingBottom:8, fontWeight:'bold', cursor:'pointer' } : { paddingBottom:8, cursor:'pointer' }
+    const activeStyle = active ? { paddingBottom:5, fontWeight:'bold', cursor:'pointer' } : { paddingBottom:5, cursor:'pointer' }
 
     const onHandleClick = () => {
         setActive(!active)
