@@ -1,17 +1,14 @@
 import Link from 'next/link'
-import { useState } from 'react'
 
 export default function Link_2(props) {
-
-    const [activeLink, setActiveLink] = useState(false)
 
     const items = []
 
     const onHandleClick = () => {
-        setActiveLink(!activeLink)
+        props.handleClick__level_2(props.level2_key)
     }
 
-    const linkStyle = activeLink ? {fontWeight:'bold', textDecoration:'none'} : {textDecoration:'none'}
+    const linkStyle = props.activeLink ? {fontWeight:'bold', textDecoration:'none'} : {textDecoration:'none'}
 
     for (const key in props.level_2) {
         items.push(
@@ -22,8 +19,6 @@ export default function Link_2(props) {
             </div>
         )
     }
-
-    console.log('render Link_2', props.level_2)
 
     return (
         <div>

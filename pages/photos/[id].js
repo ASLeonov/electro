@@ -25,7 +25,7 @@ function Photos() {
   const img_path = router.query.id ? `../${names.catalogName.toLowerCase()}/${router.query.id}.jpg` : ''
 
   return (
-      <Layout>
+      <Layout props={h2, img_path}>
         <div style={{paddingLeft:60, width:'100%'}}>
           <h1 style={{marginTop:10}}>Photo bank</h1>
           <h2>{h2}</h2>

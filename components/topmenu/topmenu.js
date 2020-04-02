@@ -24,7 +24,7 @@ export default function TopMenu() {
         <Link href="/about">
             <a style={{textDecoration: 'none'}}>About</a>
         </Link>
-        <Link href="/photos">
+        <Link href="/photo">
             <a style={{textDecoration: 'none'}}>Photos</a>
         </Link>
       </div>

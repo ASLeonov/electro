@@ -6,7 +6,8 @@ module.exports = withCSS({
   exportPathMap: async function() {
     const paths = {
       '/': { page: '/' },
-      '/about': { page: '/about' }
+      '/about': { page: '/about' },
+      '/photo': { page: '/photo' }
     }
     return paths
   }

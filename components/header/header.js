@@ -10,7 +10,7 @@ export default function Header() {
         </Link>
       </div>
       <div className='headerRightStyle'>
-        Simple example of React app with ssr
+        example of React app with ssr
       </div>
     </div>
   )
