@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './img-block.css'
 
 const imgWidthPX = 850
@@ -8,13 +8,30 @@ const minImgWidth = 0.2
 export default function ImgBlock(props) {
 
   const [imgWidth, setImgWidth] = useState(maxImgWidth)
-  const {imgPath} = props
+  const [imgPath, setImgPath] = useState(props.imgPath)
+  const {saveChanges} = props
 
   const plusImg  = () => { (imgWidth !== maxImgWidth) && setImgWidth(Number((imgWidth+0.1).toFixed(1))) }
   const minusImg = () => { (imgWidth !== minImgWidth) && setImgWidth(Number((imgWidth-0.1).toFixed(1))) }
 
   const incrementStyle = (imgWidth === maxImgWidth) ? {opacity:0.1} : {}
   const decrementStyle = (imgWidth === minImgWidth) ? {opacity:0.1} : {}
+
+  
+  useEffect( () => {
+    if (imgPath !== props.imgPath && !saveChanges) {
+      console.log('Render img-block useEffect ->', saveChanges)
+      setTimeout( () => {
+        setImgWidth(maxImgWidth)
+      }, 110)
+      setImgPath(props.imgPath)
+      return
+    }
+    if (imgPath !== props.imgPath && saveChanges) {
+      setImgPath(props.imgPath)
+      return
+    }
+  })
 
   return (
     <div style={{display:'flex', width:'100%'}}>

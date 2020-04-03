@@ -2,16 +2,8 @@
 import { useRouter }  from 'next/router'
 import { photoMenu }  from '../../public/fixtures'
 import SidebarLinks from './sidebar-links/sidebar-links'
+import './sidebar.css'
 
-const sidebarStyle = {
-    boxSizing: 'border-box',
-    minWidth: 182,
-    padding: 20,
-    paddingRight: 60,
-    borderRight: '1px solid #DDD',
-    fontSize: '120%'
-}
- 
 export default function Sidebar() {
 
     const router = useRouter()
@@ -25,12 +17,13 @@ export default function Sidebar() {
         }
       }
 
-    const currentLink = router.query.id ? {level1:level1, level2:router.query.id} : {}
-    
-return (
-    <div id='sidebar' style={sidebarStyle}>
+    const currentLink = router.query.id ? {level1:level1, level2:router.query.id} : {level1:'towns', level2:'moscow'}
+
+    return (
+    <div id='sidebar'>
         <SidebarLinks currentLink={{...currentLink}} />
     </div>
 )
+
 }
   

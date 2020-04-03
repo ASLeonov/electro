@@ -1,30 +1,16 @@
 import Link from 'next/link'
-
-const topMenuStyle = {
-    boxSizing: 'border-box',
-    padding: 20,
-    paddingTop: 0,
-    paddingBottom: 10,
-    width: '100%',
-    height: 58,
-    border: 'none',
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    fontSize: '150%',
-    borderBottom: '1px solid #DDD'
-  }
+import './topmenu.css'
 
 export default function TopMenu() {
     return (
-      <div style={topMenuStyle}>
+      <div className='topMenuStyle'>
         <Link href="/">
             <a style={{textDecoration: 'none'}}>Home</a>
         </Link>
         <Link href="/about">
             <a style={{textDecoration: 'none'}}>About</a>
         </Link>
-        <Link href="/photo">
+        <Link href="/photos/[id]" as='/photos/moscow'>
             <a style={{textDecoration: 'none'}}>Photos</a>
         </Link>
       </div>

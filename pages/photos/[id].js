@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Layout         from '../../layouts/layout_photo'
 import { useRouter }  from 'next/router'
 import { photoMenu }  from '../../public/fixtures'
@@ -18,23 +19,35 @@ const getCatalogNames = value => {
 
 function Photos() {
 
+  const [saveChanges, setSaveChanges] = useState(true)
+
   const router = useRouter()
   const names = getCatalogNames(router.query.id)
 
   const h2 = router.query.id ? `${names.catalogName} / ${names.itemName}` : ''
   const img_path = router.query.id ? `../${names.catalogName.toLowerCase()}/${router.query.id}.jpg` : ''
 
+  const checkboxHandleCLick =() => { setSaveChanges(!saveChanges) }
+
+  console.log('Render [id] ->', saveChanges)
+
   return (
-      <Layout props={h2, img_path}>
-        <div style={{paddingLeft:60, width:'100%'}}>
+      <Layout>
+        <div style={{position:'relative', paddingLeft:60, width:'100%'}}>
           <h1 style={{marginTop:10}}>Photo bank</h1>
           <h2>{h2}</h2>
-          <ImgBlock imgPath={img_path} />
+          <ImgBlock imgPath={img_path} saveChanges={saveChanges}/>
+          <div style={{position:'absolute', bottom:0}}>
+            <label>
+                <input type="checkbox" defaultChecked={saveChanges} onClick={checkboxHandleCLick} />
+                Save size of photo between pages
+            </label>
+          </div>
         </div>
       </Layout>
   )
 }
 
-Photos.getInitialProps = async function() { return {} }
+Photos.getInitialProps = async function() { return {tmp:'tmp'} }
 
 export default Photos
