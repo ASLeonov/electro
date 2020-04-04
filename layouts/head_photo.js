@@ -16,4 +16,4 @@ export default function MyHead_photo(props) {
 
 }
 
-MyHead_photo.getInitialProps = async function() { return {tmp:'tmp'} }
+// MyHead_photo.getInitialProps = async function() { return {tmp:'tmp'} }
