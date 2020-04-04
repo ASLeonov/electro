@@ -1,6 +1,6 @@
 import Layout from '../layouts/layout_all'
 
-function About() {
+function About(props) {
   return (
       <Layout title='About page'>
         <div style={{width:'100%'}}>
@@ -13,5 +13,7 @@ function About() {
 
   )
 }
+
+About.getInitialProps = async function() { return {tmpAbout:'tmpAbout'} }
 
 export default About
