@@ -2,7 +2,7 @@ import Layout from '../layouts/layout_all'
 
 function About() {
   return (
-      <Layout title='Next.js example -> About page'>
+      <Layout title='About page'>
         <div style={{width:'100%'}}>
             <h1 style={{marginTop:10}}>About page</h1>
             <div style={{width:'100%', textAlign:'center'}}>
