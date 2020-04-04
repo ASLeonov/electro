@@ -1,35 +1,31 @@
-import Header from '../components/header/header'
-import TopMenu from '../components/topmenu/topmenu'
-import Sidebar from '../components/sidebar/sidebar'
-import Footer from '../components/footer/footer'
-
-const layoutStyle = {
-  margin: 0,
-  padding: 0,
-  display: 'flex',
-  flexDirection: 'column',
-  minHeight: '100vh',
-
-}
-
-const contentStyle = {
-  padding: 20,
-  display: 'flex',
-  flexGrow: 2
-}
+import MyHead_photo from  './head_photo'
+import Header from        '../components/header/header'
+import TopMenu from       '../components/topmenu/topmenu'
+import Sidebar from       '../components/sidebar/sidebar'
+import Footer from        '../components/footer/footer'
+import                    './layout_photo.css'
 
 export default function Layout(props) {
+
   return (
-    <div style={layoutStyle}>
+    
+    <div className='layoutStyle'>
+
+      <MyHead_photo title={props.title}/>
+
       <Header />
+
       <TopMenu />
 
-      <div style={contentStyle}>
+      <div className='contentStyle'>
         <Sidebar />
         {props.children}
       </div>
 
       <Footer />
+
     </div>
+
   )
+
 }

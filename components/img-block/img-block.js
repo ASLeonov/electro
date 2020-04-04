@@ -20,7 +20,6 @@ export default function ImgBlock(props) {
   
   useEffect( () => {
     if (imgPath !== props.imgPath && !saveChanges) {
-      console.log('Render img-block useEffect ->', saveChanges)
       setTimeout( () => {
         setImgWidth(maxImgWidth)
       }, 110)

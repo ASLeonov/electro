@@ -5,7 +5,7 @@ import './style.css'
 function Index() {
 
   return (
-      <Layout>
+      <Layout title='Next.js example -> Home page'>
         <div style={{width:'100%'}}>
             <h1 style={{marginTop:10}}>Home page</h1>
             <div style={{width:'100%', textAlign:'center'}}>

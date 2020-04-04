@@ -1,29 +1,17 @@
+import MyHead_all from './head_all'
 import Header from '../components/header/header'
 import TopMenu from '../components/topmenu/topmenu'
 import Footer from '../components/footer/footer'
-
-const layoutStyle = {
-  margin: 0,
-  padding: 0,
-  display: 'flex',
-  flexDirection: 'column',
-  minHeight: '100vh',
-}
-
-const contentStyle = {
-  padding: 20,
-  paddingLeft: 60,
-  display: 'flex',
-  flexGrow: 1
-}
+import './layout_all.css'
 
 export default function Layout(props) {
   return (
-    <div style={layoutStyle}>
+    <div className='layoutStyle'>
+      <MyHead_all title={props.title}/>
       <Header />
       <TopMenu />
 
-      <div style={contentStyle}>
+      <div className='contentStyle'>
         {props.children}
       </div>
 
